@@ -20,33 +20,39 @@ function playGame(){
   return random;
 }
 
-function addRoll(num1, num2) {
-  return num1 + num2;
-}
-// Trying to generate with this function
-function generate() {
-  let result = [];
- let sum = 0;
- let newSum = sum += 1
- result.push(newSum;
- return result;
+let xArray = [];
+function addRoll(num) {
+  xArray.push(num);
+  let sum = 0;
+  let oldSum;
+  let newSum;
+  xArray.forEach(function(numberToAdd) {
+    oldSum = sum;
+    sum = sum + numberToAdd;
+    newSum = sum;
+  });
+  return newSum;
 }
 
 
 $(document).ready(function() {
-  // $("#game").on("click", )
   let = sum = 0;
   let turn = playGame();
-  let turnTotal = addRoll(turn, turn);
-  // let result = generate();
-
+  // let turnTotal = addRoll(turn, turn);
+  
+  // console.log(xArray);
   $("button").click(function() {
-    //  console.log(sum += 1 + playGame());
-    // console.log(playGame() + generate());
-    console.log(generate())
-    
-  // event.preventDefault();
+      // console.log(sum += 1 + playGame());
+      
+      let Roll = playGame();
+      let nextRoll = addRoll(Roll);
+      console.log(nextRoll);
+      
+      // console.log(newSum);
+    // console.log(generate())
+    // event.preventDefault();
   });
+  
 });
 
 
