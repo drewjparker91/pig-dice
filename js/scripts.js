@@ -14,26 +14,29 @@ function Player2(overallScore2, turnScore2) {
   this.turnScore2 = turnScore2;
 }
 
+// Generate a random number
 function playGame(){ 
   let random = Math.floor(Math.random() * 6) + 1;
 // let random2 = Math.floor(Math.random() * 6) + 1;
   return random;
 }
 
+// Pushing random roll number to array
 let xArray = [];
 function addRoll(num) {
   xArray.push(num);
+}
+
+// Adding array numbers together to get new sum
+function turnTotal() {
   let sum = 0;
-  let oldSum;
   let newSum;
   xArray.forEach(function(numberToAdd) {
-    oldSum = sum;
     sum = sum + numberToAdd;
     newSum = sum;
   });
   return newSum;
 }
-
 
 $(document).ready(function() {
   let = sum = 0;
@@ -41,17 +44,22 @@ $(document).ready(function() {
   // let turnTotal = addRoll(turn, turn);
   
   // console.log(xArray);
-  $("button").click(function() {
+  $("button#roll").click(function() {
       // console.log(sum += 1 + playGame());
-      
       let Roll = playGame();
       let nextRoll = addRoll(Roll);
-      console.log(nextRoll);
-      
-      // console.log(newSum);
-    // console.log(generate())
+      let totalTurn = turnTotal(addRoll);
+      console.log(totalTurn);
+
+    $("button#hold").click(function() {
+      let playerTotal = 0;
+      let holdTotal = totalTurn + 0;
+      console.log(holdTotal);
+      $("#output").text(holdTotal + playerTotal);
+    }); 
+  }); 
     // event.preventDefault();
-  });
+  
   
 });
 
