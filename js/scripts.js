@@ -62,7 +62,7 @@ $(document).ready(function() {
   // player1.winner(string);
   // player1Win.text(player1.winner);
   
-  $("button#roll").click(function(event) {
+  $("button#roll1").click(function(event) {
     event.preventDefault();
     let player1Roll = $("#player1Roll");
     let player1TurnScore = $("#player1TurnScore");
@@ -72,19 +72,39 @@ $(document).ready(function() {
     player1TurnScore.text(player1.turnScore);
   }); 
 
-    $("button#hold").click(function(event) {
-      event.preventDefault();
-      player1.addScore(Object.values(player1));
-      $("#output").text("Overall Score: " + player1.overallScore);
+  $("button#hold1").click(function(event) {
+    event.preventDefault();
+    player1.addScore(Object.values(player1));
+    $("#output1").text("Overall Score: " + player1.overallScore);
 
-      if (player1.overallScore >= 100) {     
-        $("button#hold").attr("disabled", true);
-        $("button#roll").attr("disabled", true);
-        $("#winner").text("You are the Winner!");
-      }
-      else {}
+    if (player1.overallScore >= 100) {     
+      $("button#hold1").attr("disabled", true);
+      $("button#roll1").attr("disabled", true);
+      $("#winner").text("You are the Winner!");
+    } else {}
   }); 
 
+  $("button#roll2").click(function(event) {
+    event.preventDefault();
+    let player2Roll = $("#player2Roll");
+    let player2TurnScore = $("#player2TurnScore");
+    let string = Object.values(player2);
+    player2.rollDice(string);
+    player2Roll.text(player2.roll);
+    player2TurnScore.text(player2.turnScore);
+  }); 
+
+  $("button#hold2").click(function(event) {
+    event.preventDefault();
+    player2.addScore(Object.values(player2));
+    $("#output2").text("Overall Score: " + player2.overallScore);
+
+    if (player2.overallScore >= 100) {     
+      $("button#hold2").attr("disabled", true);
+      $("button#roll2").attr("disabled", true);
+      $("#winner").text("You are the Winner!");
+    } else {}
+  }); 
   
     // event.preventDefault();
   
