@@ -10,12 +10,10 @@ Player.prototype.rollDice = function () {
   let random = Math.floor((Math.random() * 6) + 1);
   this.roll = random;
   this.turnScore += this.roll;
-  console.log(this.roll);
 }
 
 Player.prototype.addScore = function() {
   this.overallScore += this.turnScore;
-  console.log(this.turnScore);
 }
 
 
@@ -38,7 +36,7 @@ $(document).ready(function() {
     $("button#hold").click(function(event) {
       event.preventDefault();
       player1.addScore(Object.values(player1));
-      $("#output").text(player1.overallScore);
+      $("#output").text("Overall Score: " + player1.overallScore);
     
   }); 
     // event.preventDefault();
