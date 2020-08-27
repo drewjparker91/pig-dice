@@ -12,10 +12,23 @@ Player.prototype.rollDice = function () {
   this.turnScore += this.roll;
 }
 
+// copy of the random.
+// Player.prototype.rollDice = function () { 
+//   let random = Math.floor((Math.random() * 6) + 1);
+// while(random > 1) {
+//   random = random = Math.floor((Math.random() * 6) + 1);
+// }
+// return random;
+//   this.roll = random;
+//   this.turnScore += this.roll;
+// }
+
 Player.prototype.addScore = function() {
   this.overallScore += this.turnScore;
+  if (this.overallScore >= 100) { 
+return this.overallScore;
 }
-
+}
 
 // User Interface Logic
 let player1 = new Player();
