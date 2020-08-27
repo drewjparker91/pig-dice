@@ -16,18 +16,34 @@ Player.prototype.rollDice = function () {
 
 Player.prototype.addScore = function() {
   this.overallScore += this.turnScore 
-  if (this.overallScore >= 100) {     // this overallScore replavce I // for (overallScore)
-    return true;
-  } else {}
+  // if (this.overallScore >= 100) {     
+  //   console.log("winner");
+  //   return true;
+  // } else {}
 }
+
+
+// copy addScore
+
+// Player.prototype.addScore = function() {
+//   this.overallScore += this.turnScore 
+//   let over = this.overallScore;
+//   for (let i = 0; i < over; i++) {
+//   if (over[i] >= 100) {
+//     break     
+//     // console.log("winner");
+    
+//   } else {
+//     ("Try again")
+// }
+// }
+// }
 
 Player.prototype.winner = function() {
   for (i = 0; i < this.overallScore; i++) {
     if (this.overallScore == 100) {
-      break
-      
-    }
-    
+      break 
+    }    
   }
   console.log("winner");
   // console.log("we got it")
@@ -60,12 +76,16 @@ $(document).ready(function() {
       event.preventDefault();
       player1.addScore(Object.values(player1));
       $("#output").text("Overall Score: " + player1.overallScore);
-    
+
+      if (player1.overallScore >= 100) {     
+        $("button#hold").attr("disabled", true);
+        $("button#roll").attr("disabled", true);
+        $("#winner").text("You are the Winner!");
+      }
+      else {}
   }); 
 
-  if (player1.overallScore >= 100) {
-    console.log("winner");
-  } else {}
+  
     // event.preventDefault();
   
   
