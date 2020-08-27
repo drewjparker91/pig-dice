@@ -1,56 +1,39 @@
-// Business Logic
-function Game(player1, player2) {
-  this.player1 = player1; 
-  this.player2 = player2;
-}
-
-
-function Player(overallScore, turnScore) {
-   this.overallScore = overallScore;
-   this.turnScore = turnScore;
-   this.roll = 0
+// Business Logic for players
+function Player(name) {
+  this.name = name;  
+  this.overallScore = 0;
+  this.turnScore = 0;
+  this.roll = 0;
  }
 
-// Generate a random number
-function playGame(){ 
-  let random = Math.floor(Math.random() * 6) + 1;
-// let random2 = Math.floor(Math.random() * 6) + 1;
-  return random;
+// Generate a random number and push random number to turnScore
+Player.prototype.rollDice = function () { 
+  let random = Math.floor((Math.random() * 6) + 1);
+  this.roll = random;
+  console.log(this.roll);
+  this.turnScore += this.roll;
 }
 
-// Pushing random roll number to array
-let xArray = [];
-function addRoll(num) {
-  xArray.push(num);
-}
 
-// Adding array numbers together to get new sum
-function turnTotal() {
-  let sum = 0;
-  let newSum;
-  xArray.forEach(function(numberToAdd) {
-    sum = sum + numberToAdd;
-    newSum = sum;
-  });
-  return newSum;
-}
+// User Interface Logic
+let player1 = new Player();
+let player2 = new Player();
 
 $(document).ready(function() {
-  let = sum = 0;
-  let turn = playGame();
-  // let turnTotal = addRoll(turn, turn);
   
-  // console.log(xArray);
-  $("button#roll").click(function() {
-      // console.log(sum += 1 + playGame());
-      let Roll = playGame();
-      let nextRoll = addRoll(Roll);
-      let totalTurn = turnTotal(addRoll);
-      console.log(totalTurn);
+  $("#roll").click(function(event) {
+    event.preventDefault();
+    let player1Roll = $("#player1Roll");
+    let player1TurnScore = $("#player1TurnScore");
+    let string = Object.values(player1);
+    player1.rollDice(string);
+    player1Roll.text(player1.roll);
+    player1TurnScore.text(player1.turnScore);
+    
 
     $("button#hold").click(function() {
       let playerTotal = 0;
-      let holdTotal = totalTurn + 0;
+      let holdTotal = totalTurn.charAt(totalTurn.length - 1);
       console.log(holdTotal);
       $("#output").text(holdTotal + playerTotal);
     }); 
@@ -59,13 +42,3 @@ $(document).ready(function() {
   
   
 });
-
-
-
-
-
-// function attachContactListeners() {
-//   $("ul#contacts").on("click", "li", function() {
-//     console.log("The id of this <li> is " + this.id + ".");
-//   });
-// };

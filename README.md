@@ -1,12 +1,12 @@
- # _{Application Name}_
+ # _Pig Dice Game_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _A two player game of pig dice, 08/26/2020_
 
 #### By _Jeff Dinsmore & Johnny Duverseau_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_The is a two player game that starts with player 1. The player clicks roll the dice button and they will see a random number generated in their turn total. This player can continue to roll ro click hold to add that value to their overall score. If they roll a one on the dice their turn ends and the next player is the active player. If the current player clicks the hold button, the turn total is added to their overall score and their turn ends. _
 
 Describe: pigDice()
 
