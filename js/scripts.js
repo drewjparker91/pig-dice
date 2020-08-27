@@ -1,6 +1,5 @@
 // Business Logic for players
-function Player(name) {
-  this.name = name;  
+function Player() { 
   this.overallScore = 0;
   this.turnScore = 0;
   this.roll = 0;
@@ -10,8 +9,13 @@ function Player(name) {
 Player.prototype.rollDice = function () { 
   let random = Math.floor((Math.random() * 6) + 1);
   this.roll = random;
-  console.log(this.roll);
   this.turnScore += this.roll;
+  console.log(this.roll);
+}
+
+Player.prototype.addScore = function() {
+  this.overallScore += this.turnScore;
+  console.log(this.turnScore);
 }
 
 
@@ -29,14 +33,13 @@ $(document).ready(function() {
     player1.rollDice(string);
     player1Roll.text(player1.roll);
     player1TurnScore.text(player1.turnScore);
-    
+  }); 
 
-    $("button#hold").click(function() {
-      let playerTotal = 0;
-      let holdTotal = totalTurn.charAt(totalTurn.length - 1);
-      console.log(holdTotal);
-      $("#output").text(holdTotal + playerTotal);
-    }); 
+    $("button#hold").click(function(event) {
+      event.preventDefault();
+      player1.addScore(Object.values(player1));
+      $("#output").text(player1.overallScore);
+    
   }); 
     // event.preventDefault();
   
