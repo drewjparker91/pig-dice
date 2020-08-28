@@ -6,3 +6,22 @@ header, footer {
   font-size: 30px;
   font-weight: bold;
 }
+
+#loseTurn {
+  display: none;
+  margin-top: 40px;
+}
+
+.imgPig {
+  width: 75%;
+  float: left;
+}
+
+#game {
+  display: none;
+  margin-top: 60px;
+}
+
+#restartGame {
+  display: none;
+}
