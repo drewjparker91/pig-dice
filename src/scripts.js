@@ -7,18 +7,25 @@ export default function Player() {
 
 // Generate a random number and push random number to turnScore
 Player.prototype.rollDice = function () { 
-  let random = Math.floor((Math.random() * 6) + 1);
+  let random = Math.floor((Math.random() * 6) + 2);
   this.roll = random;
   this.turnScore += this.roll;
+  // console.log("heyhi")
 };
 
 Player.prototype.addScore = function() {
   this.overallScore += this.turnScore; 
 };
 
-// Player.prototype.winner = function() {
- 
-// };
+Player.prototype.winner = function() {
+  if (this.overallScore >= 100) {
+    return true;
+  }
+  console.log("hello");
+};
+
+
+// let winningplayer = this.winner
 
 
 // User Interface Logic

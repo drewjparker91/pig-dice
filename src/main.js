@@ -13,6 +13,7 @@ $(document).ready(function() {
   $("button#roll1").click(function(event) {
     event.preventDefault();
     $("#loseTurn").hide();
+    console.log(player1.overallScore);
     let player1Roll = $("#player1Roll");
     let player1TurnScore = $("#player1TurnScore");
     let string = Object.values(player1);
@@ -31,6 +32,7 @@ $(document).ready(function() {
   $("button#hold1").click(function(event) {
     event.preventDefault();
     player1.addScore(Object.values(player1));
+    player1.winner();
     $("#output1").text("Overall Score: " + player1.overallScore);
     $("button#hold1").attr("disabled", true);
     $("button#roll1").attr("disabled", true);
