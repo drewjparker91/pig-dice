@@ -1,25 +1,8 @@
-// Business Logic for players
-function Player() { 
-  this.overallScore = 0;
-  this.turnScore = 0;
-  this.roll = 0;
- }
-
-// Generate a random number and push random number to turnScore
-Player.prototype.rollDice = function () { 
-  let random = Math.floor((Math.random() * 6) + 1);
-  this.roll = random;
-  this.turnScore += this.roll;
-}
-
-Player.prototype.addScore = function() {
-  this.overallScore += this.turnScore 
-}
-
-Player.prototype.winner = function() {
- 
-}
-
+import $ from 'jquery';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/styles.css';
+import Player from './scripts.js';
 
 // User Interface Logic
 let player1 = new Player();
@@ -43,7 +26,7 @@ $(document).ready(function() {
       $("button#roll2").removeAttr("disabled", true);
       player1.turnScore = 0;
       $("#loseTurn").show();
-    } else { }
+    } 
   }); 
   $("button#hold1").click(function(event) {
     event.preventDefault();
@@ -61,7 +44,7 @@ $(document).ready(function() {
       $("button#hold2").attr("disabled", true);
       $("button#roll2").attr("disabled", true);
       $("#winner").text("Player 1, You are the Winner!");
-    } else {}
+    } 
   }); 
 
   $("button#roll2").click(function(event) {
@@ -80,7 +63,7 @@ $(document).ready(function() {
       $("button#roll1").removeAttr("disabled", true);
       player2.turnScore = 0;
       $("#loseTurn").show();
-    } else {}
+    } 
   }); 
 
   $("button#hold2").click(function(event) {
@@ -98,15 +81,16 @@ $(document).ready(function() {
       $("button#hold1").attr("disabled", true);
       $("button#roll1").attr("disabled", true);
       $("#winner").text("Player 2, You are the Winner!");
-    } else {}
+    } 
   }); 
   
-  $("#playGame").click(function(event) {
+  $("#playGame").click(function() {
     $("#game").show();
     $("#playGame").hide();
     $("#restartGame").show();
+    // $("#player1").css("background-color", "#FDE7E2");
   });
-  $("#restartGame").click(function(event) {
+  $("#restartGame").click(function() {
     location.reload();
   });
 });
