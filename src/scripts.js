@@ -4,12 +4,12 @@ export default function Player() {
   this.turnScore = 0;
   this.roll = 0;
 }
-// test
+
 // Generate a random number and push random number to turnScore
 Player.prototype.rollDice = function () { 
   let random = Math.floor((Math.random() * 6) + 1);
   this.roll = random;
-  // this.turnScore += this.roll;
+  this.turnScore += this.roll;
 };
 
 // Player.prototype.addScore = function() {
