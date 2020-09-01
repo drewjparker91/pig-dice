@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeffdinsmore/shape-tracker.git"
+    "url": "git+https://github.com/jeffdinsmore/pig-dice.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jeffdinsmore/shape-tracker/issues"
+    "url": "https://github.com/jeffdinsmore/pig-dice/issues"
   },
-  "homepage": "https://github.com/jeffdinsmore/shape-tracker#readme",
+  "homepage": "https://github.com/jeffdinsmore/pig-dice#readme",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",

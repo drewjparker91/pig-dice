@@ -1,8 +1,8 @@
  # _Pig Dice Game_
 
-#### _A two player game of pig dice, 08/26/2020_
+#### _A two player game of pig dice, 09/01/2020_
 
-#### By _Jeff Dinsmore & Johnny Duverseau_
+#### By _Jeff Dinsmore & Drew Parker_
 
 ## Description
 

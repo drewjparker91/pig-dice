@@ -12,9 +12,9 @@ Player.prototype.rollDice = function () {
   this.turnScore += this.roll;
 };
 
-// Player.prototype.addScore = function() {
-//   this.overallScore += this.turnScore; 
-// };
+Player.prototype.addScore = function() {
+  this.overallScore += this.turnScore; 
+};
 
 // Player.prototype.winner = function() {
  

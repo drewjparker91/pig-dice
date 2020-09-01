@@ -16,6 +16,11 @@ describe('Player', () => {
     expect(player.roll === player.turnScore).toBe(true);
   });
 
-  
+  test('should add turn score to overall score',() => {
+    const player = new Player();
+    player.addScore();
+    expect(player.turnScore === player.overallScore).toBe(true);
+  });
+
 });
 
