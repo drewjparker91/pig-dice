@@ -7,6 +7,7 @@ describe('Player', () => {
     const player = new Player();
     player.rollDice();
     expect(player.roll <= 6 && player.roll >= 1).toBe(true);
+    // Test
   });
 });
 
